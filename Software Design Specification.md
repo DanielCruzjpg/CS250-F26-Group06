@@ -6,3 +6,5 @@ Nathan Brady, ...ADD NAMES HERE
 ## Software Architecture Overview
 
 ## Development Plan and Timeline
+### 10/1/2026
+Nathan Brady:
