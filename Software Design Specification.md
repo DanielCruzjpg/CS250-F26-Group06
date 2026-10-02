@@ -1,5 +1,5 @@
 # Autonomous Vehicle System
-Nathan Brady, ...ADD NAMES HERE
+Nathan Brady, Daniel Cruz,...ADD NAMES HERE
 
 ## System Description
 
@@ -7,4 +7,4 @@ Nathan Brady, ...ADD NAMES HERE
 
 ## Development Plan and Timeline
 ### 10/1/2026
-Nathan Brady: UML Use Case Diagram
+Nathan Brady, Daniel Cruz: UML Use Case Diagram
