@@ -28,7 +28,7 @@ Nathan Brady, Daniel Cruz
 names here
 
 #### SWA Diagram
-names here
+Abdul Rahim Karimi, 
 
 #### SWA Description
 names here
