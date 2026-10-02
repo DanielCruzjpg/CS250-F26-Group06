@@ -1,5 +1,5 @@
 # BeAvis Car Rental System
-Nathan Brady, Daniel Cruz,Abdul Rahim Karimi...ADD NAMES HERE
+Nathan Brady, Daniel Cruz,Abdul Rahim Karimi, Abdulwahab fazli...ADD NAMES HERE
 
 ## System Description
 The BeAvis Car Rental System is a software platform for managing the company’s car rental operations. Customers can access it through a mobile app for iOS or Android, or through a website. Both channels allow customers to create and verify an account, sign in, find nearby rental locations, make and manage rentals, view rental history, and manage payment methods. Customers may also enable two-step authentication in their account settings.
@@ -11,7 +11,7 @@ The system uses location services to help customers find nearby branches and get
 <img width="473" height="356" alt="image" src="https://github.com/user-attachments/assets/bcf50f4c-b76c-4dd2-a266-7d706bc716d4" />
 
 #### Description:
-text here
+This software architecture shows how a car rental system works. Customers use the mobile app or website, while employees use a staff portal with role-based access. Their requests go to the API/application layer, which handles login, accounts, rentals, vehicles, locations, and contracts. The system stores regular information, such as customer, employee, vehicle, and rental data, in the core data stores, while more sensitive information, such as payment references and encrypted contracts, is kept in protected storage. The security and integration layer connects the system to outside services like payment processors, email services, maps, and authenticator apps. The arrows show how information moves securely between each part of the system using HTTPS, TLS, authentication, and limited access permissions
 
 ### SWA Diagram
 <img width="829" height="614" alt="Screenshot 2026-10-01 at 8 05 28 PM" src="https://github.com/user-attachments/assets/9748a0a0-64b3-4a05-a625-2ddf2eec3015" />
