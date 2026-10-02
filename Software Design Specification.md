@@ -5,7 +5,7 @@ Nathan Brady, Daniel Cruz,Abdul Rahim Karimi...ADD NAMES HERE
 
 ## Software Architecture Overview
 ### UML Use Case Diagram
-<img width="1014" height="625" alt="image" src="https://github.com/user-attachments/assets/5b0a629a-34a5-4665-8ab3-b4f8eeb0b607" />
+<img width="473" height="356" alt="image" src="https://github.com/user-attachments/assets/bcf50f4c-b76c-4dd2-a266-7d706bc716d4" />
 
 #### Description:
 
