@@ -5,4 +5,4 @@ Nathan Brady, ...ADD NAMES HERE
 
 ## Software Architecture Overview
 
-# Development Plan and Timeline
+## Development Plan and Timeline
