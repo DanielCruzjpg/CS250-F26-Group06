@@ -8,4 +8,11 @@ Nathan Brady, Daniel Cruz,...ADD NAMES HERE
 
 ## Development Plan and Timeline
 ### 10/1/2026
-Nathan Brady, Daniel Cruz: UML Use Case Diagram
+#### UML Use Case Diagram
+Nathan Brady, Daniel Cruz
+
+#### UML Class Description
+
+#### SWA Diagram
+
+#### SWA Description
