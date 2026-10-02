@@ -7,4 +7,4 @@ Nathan Brady, ...ADD NAMES HERE
 
 ## Development Plan and Timeline
 ### 10/1/2026
-Nathan Brady:
+Nathan Brady: UML Use Case Diagram
