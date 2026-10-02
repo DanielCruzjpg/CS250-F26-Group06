@@ -1,5 +1,5 @@
 # BeAvis Car Rental System
-Nathan Brady, Daniel Cruz,Abdul Rahim Karimi, Abdulwahab fazli, Mohammad Rasooli...ADD NAMES HERE
+Nathan Brady, Daniel Cruz,Abdul Rahim Karimi, Abdulwahab fazli, Mohammad Rasooli, Abdullah Mohammed...ADD NAMES HERE
 
 ## System Description
 The BeAvis Car Rental System is a software platform for managing the company’s car rental operations. Customers can access it through a mobile app for iOS or Android, or through a website. Both channels allow customers to create and verify an account, sign in, find nearby rental locations, make and manage rentals, view rental history, and manage payment methods. Customers may also enable two-step authentication in their account settings.
@@ -30,11 +30,11 @@ This software architecture shows how a car rental system works. Customers use th
 Nathan Brady, Daniel Cruz
 
 #### UML Class Diagram
-Abdullah Mohammed
+Abdullah Mohammed,
 Mohammad Rasooli
 
 #### SWA Diagram
-Abdul Rahim Karimi, 
+Abdul Rahim Karimi 
 
 #### SWA Description
-Abdulwahab fazli
+Abdulwahab Fazli
