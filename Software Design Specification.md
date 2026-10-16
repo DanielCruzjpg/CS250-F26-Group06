@@ -56,8 +56,9 @@ Test data: A vehicle is available at Branch A from June 10–15. A second reserv
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
+| R-SYS-01 | System | Sign in as a customer, search for a vehicle, select dates and branches, review the estimate, and confirm the reservation. | The system creates a confirmed reservation, displays its details, and shows it in rental history. |
+| R-SYS-02 | System | Attempt to reserve a vehicle that became unavailable after the search results were displayed. | The system prevents confirmation and explains that the vehicle is no longer available. |
+| R-SYS-03 | System | Submit a reservation with invalid dates or missing required information. | The system identifies the invalid or missing fields and does not create a reservation. |
 ### Test Plan 2: Vehicle Checkout and Return
 Objective: Verify that an employee can check out a vehicle for a confirmed reservation and complete the rental on return.
 
