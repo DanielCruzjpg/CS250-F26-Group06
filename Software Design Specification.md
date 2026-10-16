@@ -49,10 +49,14 @@ Test data: A vehicle is available at Branch A from June 10–15. A second reserv
 
 | ID | Granulaty | Test scenario and steps | Expected result |
 | --- | --- | --- | --- |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
+| R-UNIT-01 | Unit | Test the availability calculation with a vehicle that has no reservation during the
+requested dates | The vehicle is returned as available |
+| R-UNIT-02 | Unit | Test the availability calculation with a vehicle that has an overlapping
+confirmed reservation | The vehicle is returned as unavailable for the overlapping dates |
+| R-UNIT-03 | Unit | Calculate an estimate for a five-day reservation with a daily rate and one paid
+extra | The estimate equals the daily rate multiplied by five, plus the extra’s
+five-day price |
+| R-UNIT-04 | Unit | Submit a reservation with a return date before the pickup date | Validation rejects the dates and creates no reservation |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
