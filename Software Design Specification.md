@@ -41,6 +41,8 @@ Overall, the diagram shows how customer accounts, reservations, vehicles, rental
 ### UML Class Description:
 This software architecture shows how a car rental system works. Customers use the mobile app or website, while employees use a staff portal with role-based access. Their requests go to the API/application layer, which handles login, accounts, rentals, vehicles, locations, and contracts. The system stores regular information, such as customer, employee, vehicle, and rental data, in the core data stores, while more sensitive information, such as payment references and encrypted contracts, is kept in protected storage. The security and integration layer connects the system to outside services like payment processors, email services, maps, and authenticator apps. The arrows show how information moves securely between each part of the system using HTTPS, TLS, authentication, and limited access permissions.
 
+## Verification Test Plan
+
 
 ## Development Plan and Timeline
 ### 10/1/2026
