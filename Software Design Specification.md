@@ -47,20 +47,17 @@ Objective: Verify that customers can find an available vehicle, create a reserva
 
 Test data: A vehicle is available at Branch A from June 10–15. A second reservation overlaps June 12–14.
 
-| ID  | Granulaty | Test scenario and steps  | Expected result |
+| ID | Granulaty | Test scenario and steps | Expected result |
 | --- | --- | --- | --- |
+| C-UNIT-01 | Unit | Start a rental using a valid confirmed reservation and valid checkout mileage and fuel values. | A rental record is created and linked to the reservation, employee, and vehicle. |
+| C-UNIT-02 | Unit | Submit checkout mileage lower than the vehicle's stored mileage. | Validation rejects the mileage and does not start the rental. |
+| C-UNIT-03 | Unit | Calculate distance driven from checkout and return mileage. | The result equals return mileage minus checkout mileage. |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-
 ### Test Plan 2: Vehicle Checkout and Return
 Objective: Verify that an employee can check out a vehicle for a confirmed reservation and complete the rental on return.
 
