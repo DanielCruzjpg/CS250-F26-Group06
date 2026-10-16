@@ -49,10 +49,10 @@ Test data: A vehicle is available at Branch A from June 10–15. A second reserv
 
 | ID | Granulaty | Test scenario and steps | Expected result |
 | --- | --- | --- | --- |
-| C-UNIT-01 | Unit | Start a rental using a valid confirmed reservation and valid checkout mileage and fuel values. | A rental record is created and linked to the reservation, employee, and vehicle. |
-| C-UNIT-02 | Unit | Submit checkout mileage lower than the vehicle's stored mileage. | Validation rejects the mileage and does not start the rental. |
-| C-UNIT-03 | Unit | Calculate distance driven from checkout and return mileage. | The result equals return mileage minus checkout mileage. |
-| C-UNIT-04 | Unit | Calculate a late fee when the vehicle is returned after the scheduled return time. | The fee matches the configured late-fee rules; an on-time return produces no late fee. |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
@@ -65,10 +65,10 @@ Test data: A confirmed reservation exists for a customer and vehicle. The vehicl
 
 | ID  | Granulaty | Test scenario and steps  | Expected result |
 | --- | --- | --- | --- |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
+| C-UNIT-01 | Unit | Start a rental using a valid confirmed reservation and valid checkout mileage and fuel values. | A rental record is created and linked to the reservation, employee, and vehicle. |
+| C-UNIT-02 | Unit | Submit checkout mileage lower than the vehicle's stored mileage. | Validation rejects the mileage and does not start the rental. |
+| C-UNIT-03 | Unit | Calculate distance driven from checkout and return mileage. | The result equals return mileage minus checkout mileage. |
+| C-UNIT-04 | Unit | Calculate a late fee when the vehicle is returned after the scheduled return time. | The fee matches the configured late-fee rules; an on-time return produces no late fee. |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
