@@ -70,10 +70,10 @@ Test data: A confirmed reservation exists for a customer and vehicle. The vehicl
 | C-UNIT-02 | Unit | Submit checkout mileage lower than the vehicle's stored mileage. | Validation rejects the mileage and does not start the rental. |
 | C-UNIT-03 | Unit | Calculate distance driven from checkout and return mileage. | The result equals return mileage minus checkout mileage. |
 | C-UNIT-04 | Unit | Calculate a late fee when the vehicle is returned after the scheduled return time. | The fee matches the configured late-fee rules; an on-time return produces no late fee. |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
+| C-INT-01 | Integration | Check out a vehicle for a confirmed reservation. | The system creates the rental, updates the reservation status, records checkout details, and marks the vehicle as rented. |
+| C-INT-02 | Integration | Try to check out a vehicle for a cancelled reservation. | Checkout is rejected; no rental is created, and the vehicle status is unchanged. |
+| C-INT-03 | Integration | Complete a return with mileage and fuel details. | The system completes the rental, updates vehicle mileage and status, and calculates the final charges. |
+| C-INT-04 | Integration | Complete a return with a late fee or damage charge. | The invoice includes the applicable charge, and the payment record reflects the resulting amount and status. |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
 | type here | type here | type here | type here |
