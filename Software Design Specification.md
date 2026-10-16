@@ -47,10 +47,39 @@ Objective: Verify that customers can find an available vehicle, create a reserva
 
 Test data: A vehicle is available at Branch A from June 10–15. A second reservation overlaps June 12–14.
 
+| ID  | Granulaty | Test scenario and steps  | Expected result |
+| --- | --- | --- | --- |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+
 ### Test Plan 2: Vehicle Checkout and Return
 Objective: Verify that an employee can check out a vehicle for a confirmed reservation and complete the rental on return.
 
 Test data: A confirmed reservation exists for a customer and vehicle. The vehicle is available at the pickup branch. Record odometer and fuel values at checkout and return.
+
+| ID  | Granulaty | Test scenario and steps  | Expected result |
+| --- | --- | --- | --- |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
+| type here | type here | type here | type here |
 
 ## Development Plan and Timeline
 ### 10/1/2026
