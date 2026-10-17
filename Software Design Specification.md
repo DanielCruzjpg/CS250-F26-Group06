@@ -53,9 +53,9 @@ Test data: A vehicle is available at Branch A from June 10–15. A second reserv
 | R-UNIT-02 | Unit | Test the availability calculation with a vehicle that has an overlapping confirmed reservation | The vehicle is returned as unavailable for the overlapping dates |
 | R-UNIT-03 | Unit | Calculate an estimate for a five-day reservation with a daily rate and one paid extra | The estimate equals the daily rate multiplied by five, plus the extra’s five-day price |
 | R-UNIT-04 | Unit | Submit a reservation with a return date before the pickup date | Validation rejects the dates and creates no reservation |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
+| R-INT-01 | Integration | Search for an available vehicle using pickup and return dates, then create a reservation for one of the vehicles returned by the search. | The reservation is made and stored, and that vehicle is no longer available for those reservation dates. |
+| R-INT-02 | Integration | Search for an available vehicle, then create a reservation with dates that overlap with another registration for that same vehicle. | The reservation is not completed due to the overlapping reservation dates, and the user is prompted to enter a new reservation date. |
+| R-INT-03 | Integration | Create a reservation with a vehicle, select reservation dates, and then change the reserved vehicle to a new vehicle that is available during those dates. | The vehicle being reserved is swapped, with all the applicable info remaining the same and the price being updated for the new vehicle. |
 | R-SYS-01 | System | Sign in as a customer, search for a vehicle, select dates and branches, review the estimate, and confirm the reservation. | The system creates a confirmed reservation, displays its details, and shows it in rental history. |
 | R-SYS-02 | System | Attempt to reserve a vehicle that became unavailable after the search results were displayed. | The system prevents confirmation and explains that the vehicle is no longer available. |
 | R-SYS-03 | System | Submit a reservation with invalid dates or missing required information. | The system identifies the invalid or missing fields and does not create a reservation. |
@@ -74,10 +74,10 @@ Test data: A confirmed reservation exists for a customer and vehicle. The vehicl
 | C-INT-02 | Integration | Try to check out a vehicle for a cancelled reservation. | Checkout is rejected; no rental is created, and the vehicle status is unchanged. |
 | C-INT-03 | Integration | Complete a return with mileage and fuel details. | The system completes the rental, updates vehicle mileage and status, and calculates the final charges. |
 | C-INT-04 | Integration | Complete a return with a late fee or damage charge. | The invoice includes the applicable charge, and the payment record reflects the resulting amount and status. |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
-| type here | type here | type here | type here |
+| C-SYS-01 | System |  |  |
+| C-SYS-02 | System |  |  |
+| C-SYS-03 | System |  |  |
+| C-SYS-04 | System |  |  |
 
 ## Development Plan and Timeline
 ### 10/1/2026
