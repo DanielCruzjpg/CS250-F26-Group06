@@ -74,10 +74,10 @@ Test data: A confirmed reservation exists for a customer and vehicle. The vehicl
 | C-INT-02 | Integration | Try to check out a vehicle for a cancelled reservation. | Checkout is rejected; no rental is created, and the vehicle status is unchanged. |
 | C-INT-03 | Integration | Complete a return with mileage and fuel details. | The system completes the rental, updates vehicle mileage and status, and calculates the final charges. |
 | C-INT-04 | Integration | Complete a return with a late fee or damage charge. | The invoice includes the applicable charge, and the payment record reflects the resulting amount and status. |
-| C-SYS-01 | System |  |  |
-| C-SYS-02 | System |  |  |
-| C-SYS-03 | System |  |  |
-| C-SYS-04 | System |  |  |
+| C-SYS-01 | System | Sign in as an employee, locate a customer's confirmed reservation, record checkout mileage and fuel level, and complete vehicle checkout. | The rental is started, the reservation status changes to active, and the vehicle status changes to rented. |
+| C-SYS-02 | System | Attempt to check out a vehicle using a cancelled or invalid reservation. | using a cancelled or invalid reservation.The system prevents checkout, displays an error message, and creates no rental record. |
+| C-SYS-03 | System | Process a vehicle return by entering return mileage and fuel level for an on-time rental | The rental is closed, final charges are calculated, the vehicle status changes to available, and an invoice is generated and sent to the customer. |
+| C-SYS-04 | System | Process a vehicle return that is late and includes a damage charge, then collect payment. | The invoice includes all applicable fees, payment is recorded successfully, and the rental is marked complete. |
 
 ## Development Plan and Timeline
 ### 10/1/2026
