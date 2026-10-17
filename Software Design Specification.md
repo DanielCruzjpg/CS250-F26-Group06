@@ -86,7 +86,7 @@ Nathan Brady, Daniel Cruz
 
 #### UML Class Diagram
 Abdullah Mohammed,
-Mohammad Rasooli
+Mohammad Rasooli,
 Mohammed Kashif
 
 #### SWA Diagram
