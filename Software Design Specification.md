@@ -78,6 +78,26 @@ We propose **PostgreSQL (SQL relational database)** for BeAvis because its core 
 
 The design uses **one primary PostgreSQL database** for operational data and **one separate encrypted document-storage system** for signed agreements. Document storage is a storage service, not a second SQL database. A third-party payment processor is an external service, not a BeAvis database. This keeps the relational design manageable while giving signed contracts distinct access and retention controls.
 
+### 3. Logical Data Organization
+
+| Table / Store | Key fields or contents | Purpose / Relationships |
+| --- | --- | --- |
+| Users | user_id (PK), name, email, role, authentication reference | Shared accounts; roles include customer, employee, administrator |
+| Branches | branch_id (PK), name, address, location | Pickup/return locations |
+| Vehicles | vehicle_id (PK), branch_id (FK), make, model, category, daily_rate, mileage, status | Each vehicle is assigned to a branch |
+| Reservations | reservation_id (PK), customer_id (FK), vehicle_id (FK), pickup_branch_id (FK), return_branch_id (FK), pickup_at, return_at, status, estimated_cost | Tracks requested and confirmed rentals |
+| Rentals | rental_id (PK), reservation_id (FK), employee_id (FK), checkout_mileage, return_mileage, checkout_fuel, return_fuel, actual_return_at, status | Tracks actual checkout and return |
+| Extras | extra_id (PK), name, daily_price | Catalog of optional add-ons |
+| Reservation_Extras | reservation_id (FK), extra_id (FK), quantity | Connects reservations with selected extras |
+| Invoices | invoice_id (PK), rental_id (FK), subtotal, fees, tax, total | Final billing summary |
+| Payments | payment_id (PK), invoice_id (FK), processor_reference, amount, method_type, status | Tracks charges/refunds without storing full card numbers |
+| Notifications | notification_id (PK), user_id (FK), type, sent_at, status | Tracks confirmations, reminders, receipts |
+| Contracts | contract_id (PK), reservation_id (FK), storage_key, signed_at, document_status | Stores metadata and a reference to protected document storage |
+| Encrypted document storage | Signed agreement files | Files are encrypted and accessible only through authorized application functions |
+
+PK means primary key; FK means foreign key. Fields are illustrative and can be refined during implementation. Roles and status fields should use defined allowed values matching the UML enumerations.
+
+
 
 ## Verification Test Plan
 ### Test Plan 1: Make a Reservation
