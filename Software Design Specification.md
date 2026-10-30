@@ -154,3 +154,16 @@ Abdul Rahim Karimi
 Abdulwahab Fazli
 
 ### 10/15/2026
+
+### 10/29/2026
+#### Updated Software Architecture
+Daniel Cruz
+
+#### Database Technology and Rationale
+Mohammed Kashif
+
+#### Number of Databases and Storage System
+Abdul Rahim Karimi 
+
+#### Logical Data Organization
+Mohammad Rasooli
