@@ -41,6 +41,31 @@ Overall, the diagram shows how customer accounts, reservations, vehicles, rental
 ### UML Class Description:
 This software architecture shows how a car rental system works. Customers use the mobile app or website, while employees use a staff portal with role-based access. Their requests go to the API/application layer, which handles login, accounts, rentals, vehicles, locations, and contracts. The system stores regular information, such as customer, employee, vehicle, and rental data, in the core data stores, while more sensitive information, such as payment references and encrypted contracts, is kept in protected storage. The security and integration layer connects the system to outside services like payment processors, email services, maps, and authenticator apps. The arrows show how information moves securely between each part of the system using HTTPS, TLS, authentication, and limited access permissions.
 
+## Updated Software Architecture Diagram (Database-Aware Design)
+
+The following diagram updates the existing software architecture with the proposed data management design. It keeps the existing mobile/web clients, employee portal, application layer, external integrations, and separate handling of protected information.
+
+```mermaid
+flowchart TB
+  subgraph Clients[Client Interfaces]
+    Mobile[Customer Mobile App - iOS / Android]
+    Web[Customer Website]
+    Staff[Employee / Admin Portal]
+  end
+  Mobile -->|HTTPS| API[API / Application Layer]
+  Web -->|HTTPS| API
+  Staff -->|HTTPS + Role Authorization| API
+  API --> Auth[Authentication and Access Control]
+  API --> Logic[Business Services: Accounts, Vehicles, Reservations, Rentals, Billing, Contracts]
+  Logic -->|Parameterized SQL / Transactions| DB[(PostgreSQL: Main Relational Database)]
+  Logic -->|Authorized Read / Write| Docs[(Encrypted Contract / Document Storage)]
+  DB -->|Document ID and Metadata Only| Logic
+  Logic -->|Payment Token / Status| Pay[External Payment Processor]
+  Logic -->|Email Delivery| Email[Email Service]
+  Logic -->|Location and Directions| Maps[Mapping Service]
+  Auth -->|Optional 2FA| TwoFA[Authenticator Service]
+```
+
 ## Verification Test Plan
 ### Test Plan 1: Make a Reservation
 Objective: Verify that customers can find an available vehicle, create a reservation, and receive an accurate estimate.
