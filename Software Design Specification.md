@@ -74,6 +74,10 @@ Customer and staff requests reach the API over HTTPS. Authentication and role pe
 
 We propose **PostgreSQL (SQL relational database)** for BeAvis because its core information is structured and connected: customers make reservations for vehicles at branches; employees check vehicles out and in; rentals produce invoices and payment records. Foreign keys help maintain valid links, and transactions help prevent partial updates. SQL queries also support searches by vehicle, branch, date, and rental status.
 
+### 2. Number of Databases and Storage Systems
+
+The design uses **one primary PostgreSQL database** for operational data and **one separate encrypted document-storage system** for signed agreements. Document storage is a storage service, not a second SQL database. A third-party payment processor is an external service, not a BeAvis database. This keeps the relational design manageable while giving signed contracts distinct access and retention controls.
+
 
 ## Verification Test Plan
 ### Test Plan 1: Make a Reservation
