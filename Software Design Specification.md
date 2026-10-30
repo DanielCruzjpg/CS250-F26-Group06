@@ -65,6 +65,8 @@ flowchart TB
   Logic -->|Location and Directions| Maps[Mapping Service]
   Auth -->|Optional 2FA| TwoFA[Authenticator Service]
 ```
+**Diagram explanation:** Customer and staff requests reach the API over HTTPS. Authentication and role permissions are checked before the business services read or modify data. PostgreSQL stores structured operational records and references to signed contracts. Signed contract files are stored separately in encrypted, access-controlled document storage. The payment processor handles card details; BeAvis retains only necessary payment references and statuses. External email, mapping, and authenticator services remain integrations rather than internal databases. This is a **proposed updated architecture** for group approval, not a claim that the system has already been implemented.
+
 
 ## Verification Test Plan
 ### Test Plan 1: Make a Reservation
