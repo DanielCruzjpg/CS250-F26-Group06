@@ -97,7 +97,25 @@ The design uses **one primary PostgreSQL database** for operational data and **o
 
 PK means primary key; FK means foreign key. Fields are illustrative and can be refined during implementation. Roles and status fields should use defined allowed values matching the UML enumerations.
 
+### 4. How the Data Moves Through the System
 
+**Vehicle search and reservation:** The customer enters a branch and rental dates. The application queries eligible vehicles and checks for overlapping confirmed or active reservations. When the customer confirms, the server validates the dates and availability again and saves the reservation in a transaction. A vehicle must not receive two confirmed reservations for overlapping periods. A vehicle's general status alone is not enough to determine date-specific availability.
+
+**Checkout:** An employee accesses a confirmed reservation, verifies the vehicle and customer, and records starting mileage and fuel. The system creates a rental record and updates the reservation and vehicle statuses in a transaction. Invalid or cancelled reservations cannot be checked out.
+
+**Return and billing:** An employee records return mileage, fuel, time, and any applicable damage. The application calculates charges, creates or updates the invoice, records payment status through the payment provider, and updates the rental and vehicle status. A vehicle needing maintenance should be marked unavailable rather than automatically made rentable.
+
+**Contracts and notifications:** The application stores a signed contract file in encrypted document storage, while the SQL database stores the file reference, ownership, signing time, and status. Notifications can be sent by email and their delivery status recorded in SQL.
+
+### 5. Data Consistency, Security, and Recovery
+
+- **Consistency:** Use foreign keys, required-field validation, unique identifiers, and database transactions. Recheck availability at confirmation and coordinate concurrent reservations so two customers cannot book the same vehicle for overlapping dates.
+- **Access control:** Customers may access only their own reservations and contracts; employees see information needed for their work; administrators have separately controlled permissions. Enforce these checks on the server, not only in the app interface.
+- **Sensitive information:** Encrypt database connections and stored contract files. Store password hashes through a trusted authentication system, not plaintext passwords. Do not store complete card numbers or card security codes; use payment-provider tokens/references instead.
+- **Auditability:** Log important reservation changes, checkouts, returns, payment events, and access to sensitive contracts without putting secrets in logs.
+- **Backups and retention:** Schedule encrypted database backups, test restoration, restrict backup access, and establish retention/deletion rules for customer information and signed contracts according to applicable requirements.
+
+These are design requirements for implementation; they are not statements that security controls or backups are already operating.
 
 ## Verification Test Plan
 ### Test Plan 1: Make a Reservation
@@ -140,7 +158,8 @@ Test data: A confirmed reservation exists for a customer and vehicle. The vehicl
 ## Development Plan and Timeline
 ### 10/1/2026
 #### UML Use Case Diagram
-Nathan Brady, Daniel Cruz
+Nathan Brady, 
+Daniel Cruz
 
 #### UML Class Diagram
 Abdullah Mohammed,
@@ -167,3 +186,9 @@ Abdul Rahim Karimi
 
 #### Logical Data Organization
 Mohammad Rasooli
+
+#### How Data Moves Through The System
+Nathan Brady
+
+#### Data Consistency, Security, and Recovery
+Nathan Brady
