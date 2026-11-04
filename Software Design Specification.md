@@ -117,7 +117,7 @@ PK means primary key; FK means foreign key. Fields are illustrative and can be r
 
 These are design requirements for implementation; they are not statements that security controls or backups are already operating.
 
-### 6. Alternatives Considered
+## 6. Alternatives Considered
 
 **MongoDB / NoSQL instead of PostgreSQL:** A document database allows flexible document structures and can be useful when records vary greatly. However, BeAvis has many relationships across users, vehicles, reservations, rentals, and invoices. SQL provides a clear relational model and well-understood transactional controls. MongoDB also supports transactions, but it would require different modeling choices for these relationships.
 
@@ -135,7 +135,8 @@ These are design requirements for implementation; they are not statements that s
 | External payment processor | Limits exposure to raw payment-card data | Adds a dependency on provider availability and integration |
 | Strong role-based permissions | Helps protect sensitive customer information | Requires careful permission design and testing |
 
-**Conclusion:** We recommend one PostgreSQL database for structured operational records, separate encrypted storage for signed contracts, and external services for payments, email, maps, and authentication. This design matches the BeAvis rental workflow while balancing consistency, security, simplicity, and future growth.
+**Conclusion:** We recommend one PostgreSQL database for structured operational records, separate encrypted storage for signed contracts, and external services for payments, email, maps, and authentication. This design matches the BeAvis rental workflow while balancing consistency, security, simplicity, and future growths.
+
 
 
 ## Verification Test Plan
