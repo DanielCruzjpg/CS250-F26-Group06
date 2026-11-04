@@ -117,6 +117,27 @@ PK means primary key; FK means foreign key. Fields are illustrative and can be r
 
 These are design requirements for implementation; they are not statements that security controls or backups are already operating.
 
+### 6. Alternatives Considered
+
+**MongoDB / NoSQL instead of PostgreSQL:** A document database allows flexible document structures and can be useful when records vary greatly. However, BeAvis has many relationships across users, vehicles, reservations, rentals, and invoices. SQL provides a clear relational model and well-understood transactional controls. MongoDB also supports transactions, but it would require different modeling choices for these relationships.
+
+**One database containing signed contract files:** Storing contracts directly as binary data in PostgreSQL would simplify the number of systems and make some backup processes more centralized. However, it could increase database size and make document-specific access, storage, and retention harder to manage. Separate protected document storage adds integration work but is more suitable for files.
+
+**Several independent databases for accounts, vehicles, and payments:** Separate databases could allow each service to scale and deploy independently. For this group's project, that would introduce extra complexity for cross-database consistency, reporting, and maintenance. One relational database is simpler at the current scale.
+
+### 7. Tradeoffs and Final Decision
+
+| Decision | Benefit | Tradeoff |
+| --- | --- | --- |
+| PostgreSQL SQL database | Clear relationships, joins, constraints, and transactions | Schema changes require planning and migrations |
+| One operational database | Simpler maintenance and cross-table consistency | Could become a scaling bottleneck if traffic grows significantly |
+| Separate encrypted document storage | Better handling of large signed files and access controls | Requires a reliable link between database records and stored files |
+| External payment processor | Limits exposure to raw payment-card data | Adds a dependency on provider availability and integration |
+| Strong role-based permissions | Helps protect sensitive customer information | Requires careful permission design and testing |
+
+**Conclusion:** We recommend one PostgreSQL database for structured operational records, separate encrypted storage for signed contracts, and external services for payments, email, maps, and authentication. This design matches the BeAvis rental workflow while balancing consistency, security, simplicity, and future growth.
+
+
 ## Verification Test Plan
 ### Test Plan 1: Make a Reservation
 Objective: Verify that customers can find an available vehicle, create a reservation, and receive an accurate estimate.
